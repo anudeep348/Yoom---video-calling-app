@@ -17,11 +17,12 @@ export const useGetCallById = (id: string | string[]) => {
         },
       });
 
-      if (calls.length > 0) {
-        setCall(calls[0]);
-      }
+      if (calls.length > 0) setCall(calls[0]);
+
       setIsCallLoading(false);
     };
+
+    loadCall();
   }, [client, id]);
 
   return { call, isCallLoading };
